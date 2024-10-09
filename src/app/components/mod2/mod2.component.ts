@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {NgClass, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-mod2',
@@ -8,17 +8,37 @@ import {NgClass, NgIf} from "@angular/common";
   imports: [
     FormsModule,
     NgIf,
-    NgClass
+    NgClass,
+    NgForOf
   ],
   templateUrl: './mod2.component.html',
   styleUrl: './mod2.component.css'
 })
 export class Mod2Component {
 
-  public name : string = "";
+  public name: string = "";
+  public users: string[]
 
-  public resetName() : void{
+  constructor() {
+    this.users = [];
+  }
+
+  public resetName(): void {
     this.name = ""
+  }
+
+  public addUser() {
+    if (this.name) {
+      this.users.push(this.name);
+      this.name = "";
+    }
+  }
+
+  public removeUser(user: string) {
+    const index = this.users.indexOf(user);
+    if (index !== -1) {
+      this.users.splice(index, 1);
+    }
   }
 
   //permet de visualiser le one-way-binding [ngModel] qui met à jour l'input après 5 sec

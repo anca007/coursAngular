@@ -2,6 +2,8 @@
 <label for="name">Nom :</label>
 <!--<input type="text" [ngModel]="name" name="name" id="name">-->
 <input type="text" [(ngModel)]="name" name="name" id="name">
+<!--demo 3-->
+<button type="button" (click)="addUser()">Ajouter</button>
 <button type="button" (click)="resetName()">Reset</button>
 
 <!--demo 2-->
@@ -9,5 +11,12 @@
   [ngClass]="name == 'Michel' ? 'red' : '' "> {{ name }} </span> !
 </div>
 @if (name && name.trim().length > 0) {
-  <div>Bienvenue <span [ngClass]="name == 'Michel' ? 'red' : '' "> {{ name }} </span> ! </div>
+  <div>Bienvenue <span [ngClass]="name == 'Michel' ? 'red' : '' "> {{ name }} </span> !</div>
 }
+
+<!--demo 3-->
+<ul>
+  <li *ngFor="let user of users"> {{ user }}
+    <button type="button" (click)="removeUser(user)">Supprimer</button>
+  </li>
+</ul>
