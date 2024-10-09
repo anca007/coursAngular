@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
+import {NgClass, NgIf} from "@angular/common";
 
 @Component({
-  selector: 'app-mod2demo1',
+  selector: 'app-mod2',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    NgIf,
+    NgClass
   ],
-  templateUrl: './mod2demo1.component.html',
-  styleUrl: './mod2demo1.component.css'
+  templateUrl: './mod2.component.html',
+  styleUrl: './mod2.component.css'
 })
-export class Mod2demo1Component {
+export class Mod2Component {
 
   public name : string = "";
 
@@ -20,9 +23,9 @@ export class Mod2demo1Component {
 
   //permet de visualiser le one-way-binding [ngModel] qui met à jour l'input après 5 sec
   ngOnInit() {
-    setTimeout(() =>{
-      this.name = "Michel"
-    }, 5000)
+    // setTimeout(() =>{
+    //   this.name = "Michel"
+    // }, 5000)
     //await new Promise(f => setTimeout(f, 5000));
   }
 

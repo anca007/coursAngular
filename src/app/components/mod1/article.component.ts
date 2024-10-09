@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-mod1',
   standalone: true,
   imports: [],
   template: `
