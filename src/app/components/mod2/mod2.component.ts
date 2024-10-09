@@ -1,6 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, LOCALE_ID} from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {NgClass, NgForOf, NgIf} from "@angular/common";
+import {DatePipe, NgClass, NgForOf, NgIf, SlicePipe, TitleCasePipe} from "@angular/common";
+
+//import de la local fr pour formaliser toutes les dates
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 
 @Component({
   selector: 'app-mod2',
@@ -9,8 +14,13 @@ import {NgClass, NgForOf, NgIf} from "@angular/common";
     FormsModule,
     NgIf,
     NgClass,
-    NgForOf
+    NgForOf,
+    TitleCasePipe,
+    SlicePipe,
+    DatePipe
   ],
+  //import de la local fr
+  //providers : [{ provide: LOCALE_ID, useValue: 'fr-FR' }],
   templateUrl: './mod2.component.html',
   styleUrl: './mod2.component.css'
 })
@@ -18,9 +28,11 @@ export class Mod2Component {
 
   public name: string = "";
   public users: string[]
+  public date : Date
 
   constructor() {
     this.users = [];
+    this.date = new Date();
   }
 
   public resetName(): void {
