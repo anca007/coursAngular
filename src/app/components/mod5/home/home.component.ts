@@ -16,7 +16,7 @@ export class HomeComponent {
   }
 
   public goToRegister(){
-    this.router.navigate(['register', 33, 'michel', 12])
+    this.router.navigate(['register'])
   }
 
   public goToDetail(id: number){
