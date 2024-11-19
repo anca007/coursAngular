@@ -7,6 +7,9 @@ import {Mod4Service} from "../services/mod4.service";
 //si true le passage autorisé, sinon passage fermé
 export const authGuard: CanActivateFn = (route, state) => {
 
+
+  console.log(route)
+  console.log(state)
   //injection de service dans fonction
   let version = inject(Mod4Service).getVersion()
 

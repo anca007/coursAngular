@@ -9,6 +9,6 @@ export class Mod4Service {
 
 
   public getVersion() : string{
-    return "1.0";
+    return "2.0";
   }
 }

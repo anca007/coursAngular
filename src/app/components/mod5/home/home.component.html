@@ -1,6 +1,11 @@
 <h1>Home navigation</h1>
-<div routerLink="register">
+<div routerLink="register" routerLinkActive="active">
   Go to register
+</div>
+<div routerLink="detail/12" routerLinkActive="active">
+  Go to detail
 </div>
 <button type="button" (click)="goToRegister()">Register ?</button>
 <button type="button" (click)="goToDetail(12)">Detail ?</button>
+
+<router-outlet></router-outlet>
