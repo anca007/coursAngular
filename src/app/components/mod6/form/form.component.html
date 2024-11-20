@@ -1,0 +1,26 @@
+<form [formGroup]="infoForm" (ngSubmit)="onSubmit()">
+  <label for="email">Adresse mail :</label>
+  <input type="email" id="email" name="email" formControlName="email">
+  <br>
+  <label for="password">Mot de passe :</label>
+  <input type="password" id="password" name="password" formControlName="password">
+  <br>
+  <label for="birthdate">Date de naissance :</label>
+  <input type="date" id="birthdate" name="birthdate" formControlName="birthdate">
+  <br>
+  <label for="job">Métier</label>
+  <select name="job" id="job" formControlName="job">
+    <option value="dev">Développeur</option>
+    <option value="asr">Admin Sys</option>
+  </select>
+  <br>
+  <label>
+    <input type="checkbox" name="newsletter" formControlName="newsletter">
+    Je souhaite m'abonner à la newsletter
+  </label>
+  <br>
+  <label for="knowledge">Connaissez-vous Angular ? (1 à 10)</label>
+  <input type="range" id="knowledge" name="knowledge" min="1" max="10" formControlName="knowledge">
+  <br>
+  <button type="submit">Soumettre</button>
+</form>
