@@ -1,0 +1,16 @@
+<h1>Joke</h1>
+
+@if (joke) {
+  <div>
+    {{ joke.value }}
+  </div>
+}
+<div>
+  -----------------------------------------------------
+</div>
+<div *ngIf="joke2$ | async as joke2">
+  <div>
+    <img src="{{ joke2.icon_url }}" alt="chuck">
+    {{ joke2.value }}
+  </div>
+</div>
