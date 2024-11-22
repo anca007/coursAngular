@@ -6,11 +6,12 @@ import {Mod4Component} from "./components/mod4/mod4.component";
 import {HomeComponent} from "./components/mod5/home/home.component";
 import {FormComponent} from "./components/mod6/form/form.component";
 import {Mod8Component} from "./components/mod8/mod8.component";
+import {ModTestComponent} from "./components/mod-test/mod-test.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ArticleComponent, Mod2Component, Mod4Component, HomeComponent, FormComponent, Mod8Component],
+  imports: [RouterOutlet, ArticleComponent, Mod2Component, Mod4Component, HomeComponent, FormComponent, Mod8Component, ModTestComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
