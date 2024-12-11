@@ -2,6 +2,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ModTestComponent} from './mod-test.component';
 import {TestService} from "../../services/test.service";
+import {By} from "@angular/platform-browser";
 
 
 class MockService {
@@ -66,6 +67,27 @@ describe('ModTestComponent', () => {
 
   //tester avec un service, si on fait un test classique on va tester la logique du service et le composant
   //dans l'idéal il faut mocker les services pour isoler le composant
+
+
+  //ajout vérification form
+  it('should bind input value to username property', () => {
+    const inputElement = fixture.debugElement.query(By.css('input')).nativeElement;
+
+    // Vérifie la valeur initiale
+    expect(inputElement.value).toBe('');
+
+    // Simule une saisie utilisateur
+    inputElement.value = 'Michel';
+    inputElement.dispatchEvent(new Event('input'));
+
+    // Vérifie que le modèle est mis à jour
+    expect(component.username).toBe('Michel');
+
+    // Met à jour le modèle et vérifie l'input
+    component.username = 'UpdatedValue';
+    fixture.detectChanges();
+    expect(inputElement.value).toBe('UpdatedValue');
+  });
 
 
 });
