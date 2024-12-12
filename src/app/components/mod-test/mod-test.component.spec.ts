@@ -69,7 +69,7 @@ describe('ModTestComponent', () => {
   //dans l'idéal il faut mocker les services pour isoler le composant
 
 
-  //ajout vérification form
+  //ajout vérification template driven-form
   it('should bind input value to username property', () => {
     const inputElement = fixture.debugElement.query(By.css('input')).nativeElement;
 
@@ -88,6 +88,21 @@ describe('ModTestComponent', () => {
     fixture.detectChanges();
     expect(inputElement.value).toBe('UpdatedValue');
   });
+
+
+  // reactive form
+  it('should bidule', () => {
+    const input = fixture.nativeElement.querySelector('#password')
+
+    expect(input.value).toBe('')
+
+    input.value = 'coucou';
+    input.dispatchEvent(new Event('input'))
+
+    //form -> formgroup ->
+    expect(component.form.get('password')?.value).toBe('coucou')
+
+  })
 
 
 });
